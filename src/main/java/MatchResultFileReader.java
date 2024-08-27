@@ -14,6 +14,7 @@ public class MatchResultFileReader {
         matches = new ArrayList<>();
         this.fileName = fileName;
 
+
     }
 
     public List<MatchResult> readFile() {
@@ -28,9 +29,6 @@ public class MatchResultFileReader {
                 if (parts.length >= 2) {
                     String lastPart = parts[1];// her skal tjekkes for om der findes en index 1 eller out of bounce!
                     String[] splitLastPart = lastPart.split(","); //deler målscorer op
-
-
-
 
                     for (int i = 0; i < splitLastPart.length; i++) {
                         goalScorers.add(splitLastPart[i]);
