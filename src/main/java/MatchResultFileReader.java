@@ -36,8 +36,6 @@ public class MatchResultFileReader {
                         goalScorers.add(splitLastPart[i]);
                     }
 
-
-
                 }
                 matches.add(new MatchResult(teams, goalScorers));
 

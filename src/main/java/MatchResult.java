@@ -20,6 +20,6 @@ public class MatchResult {
 
     @Override
     public String toString(){
-        return "Teams: " +teams+", goalScores:"+goalScorers;
+        return "Teams: " +teams+", goalScores:"+goalScorers+"\n";
     }
 }
