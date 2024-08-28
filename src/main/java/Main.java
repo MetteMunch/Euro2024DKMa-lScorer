@@ -6,6 +6,7 @@ public class Main {
         System.out.println(stat.getGoalScorers());
         System.out.println("Her oversigt med total antal mål:");
         System.out.println(stat.getGoalScorersWithTotals());
+        System.out.println(stat.getNumberOfGoals("Højlund"));
 
     }
 }

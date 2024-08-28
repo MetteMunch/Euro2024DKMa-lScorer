@@ -5,9 +5,11 @@ public class Statistics {
 
     private List<MatchResult> matchResults;
 
+
     public Statistics(String fileName) throws FileNotFoundException {
         MatchResultFileReader mrfr = new MatchResultFileReader(fileName);
         matchResults = mrfr.readFile();
+
     }
 
     public Set<String> getGoalScorers(){
@@ -15,7 +17,7 @@ public class Statistics {
 
         for(MatchResult m: matchResults){
             List<String> scorers = m.getGoalScorers();
-            goalScorers.addAll(scorers);
+            goalScorers.addAll(scorers);//kan puttes på en liste
         }
         return goalScorers;
     }
@@ -25,6 +27,7 @@ public class Statistics {
 
         for(MatchResult m: matchResults){ //Her omdannes listen med typen MatchResult til String liste med alene målscorene
             List<String> scorers = m.getGoalScorers();
+
 
             for(String s: scorers){
                 if(scorerWithTotals.containsKey(s)){ //hvis målscorer allerede er i HashMap, så skal værdi tillægges 1
@@ -38,8 +41,10 @@ public class Statistics {
         return scorerWithTotals;
     }
 
-//    public int getNumberOfGoals(String goalScorer){
-//
-//
-//    }
+    public int getNumberOfGoals(String goalScorer){
+        Map<String,Integer> scorerWithTotals = getGoalScorersWithTotals();
+        return scorerWithTotals.get(goalScorer);
+
+
+    }
 }
